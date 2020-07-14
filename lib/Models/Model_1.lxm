@@ -1,0 +1,142 @@
+{
+  "fixtures": [
+    {
+      "id": 46,
+      "class": "heronarts.lx.structure.GridFixture",
+      "internal": {
+        "modulationColor": 0
+      },
+      "parameters": {
+        "label": "Bot 1 Grid",
+        "x": -93.5,
+        "y": -70.0,
+        "z": 0.0,
+        "yaw": 0.0,
+        "pitch": 0.0,
+        "roll": 0.0,
+        "selected": true,
+        "enabled": false,
+        "brightness": 1.0,
+        "identify": true,
+        "mute": false,
+        "solo": false,
+        "host": "127.0.0.1",
+        "protocol": 0,
+        "artNetUniverse": 0,
+        "opcChannel": 0,
+        "ddpDataOffset": 0,
+        "kinetPort": 1,
+        "numRows": 38,
+        "numColumns": 33,
+        "rowSpacing": 2.9,
+        "columnSpacing": 5.8,
+        "positionMode": 0,
+        "wiring": 0,
+        "splitPacket": false,
+        "pointsPerPacket": 170
+      },
+      "children": {}
+    },
+    {
+      "id": 47,
+      "class": "heronarts.lx.structure.GridFixture",
+      "internal": {
+        "modulationColor": 0
+      },
+      "parameters": {
+        "label": "Bot 2 Grid",
+        "x": -90.6,
+        "y": -68.6,
+        "z": 0.0,
+        "yaw": 0.0,
+        "pitch": 0.0,
+        "roll": 0.0,
+        "selected": false,
+        "enabled": false,
+        "brightness": 1.0,
+        "identify": true,
+        "mute": false,
+        "solo": false,
+        "host": "127.0.0.1",
+        "protocol": 0,
+        "artNetUniverse": 0,
+        "opcChannel": 0,
+        "ddpDataOffset": 0,
+        "kinetPort": 1,
+        "numRows": 37,
+        "numColumns": 32,
+        "rowSpacing": 2.9,
+        "columnSpacing": 5.8,
+        "positionMode": 0,
+        "wiring": 0,
+        "splitPacket": false,
+        "pointsPerPacket": 170
+      },
+      "children": {}
+    },
+    {
+      "id": 48,
+      "class": "heronarts.lx.structure.StripFixture",
+      "internal": {
+        "modulationColor": 0
+      },
+      "parameters": {
+        "label": "Bot Strip 1",
+        "x": -84.8,
+        "y": 39.0,
+        "z": 0.0,
+        "yaw": 0.0,
+        "pitch": 0.0,
+        "roll": 0.0,
+        "selected": false,
+        "enabled": false,
+        "brightness": 1.0,
+        "identify": true,
+        "mute": false,
+        "solo": false,
+        "protocol": 0,
+        "reverse": false,
+        "host": "127.0.0.1",
+        "artNetUniverse": 0,
+        "opcChannel": 0,
+        "ddpDataOffset": 0,
+        "kinetPort": 1,
+        "numPoints": 30,
+        "spacing": 5.9
+      },
+      "children": {}
+    },
+    {
+      "id": 49,
+      "class": "heronarts.lx.structure.StripFixture",
+      "internal": {
+        "modulationColor": 0
+      },
+      "parameters": {
+        "label": "Bot Strip 2",
+        "x": -76.3,
+        "y": 40.9,
+        "z": 0.0,
+        "yaw": 0.0,
+        "pitch": 0.0,
+        "roll": 0.0,
+        "selected": false,
+        "enabled": false,
+        "brightness": 1.0,
+        "identify": true,
+        "mute": false,
+        "solo": false,
+        "protocol": 0,
+        "reverse": false,
+        "host": "127.0.0.1",
+        "artNetUniverse": 0,
+        "opcChannel": 0,
+        "ddpDataOffset": 0,
+        "kinetPort": 1,
+        "numPoints": 26,
+        "spacing": 5.9
+      },
+      "children": {}
+    }
+  ]
+}
