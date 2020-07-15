@@ -78,7 +78,8 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
     String filesDir = ".";
     String defaultFile = "background.jpg";
     boolean includeAntialias = false;
-    boolean scan = true;
+    boolean scan = false;
+    System.out.println("model aspect ratio: " + model.xRange/model.yRange);
 
     if (!filesDir.endsWith("/")) {
       filesDir = filesDir + "/";
@@ -121,6 +122,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
   private void loadImg(String imgname) {
     logger.info("Loading image: " + imgname);
     tileImage = applet.loadImage(filesDir + imgname);
+    System.out.println("image aspect ratio: " + (float)tileImage.width/(float)tileImage.height);
     if (!tileKnob.getValueb()) {
       if (!scanKnob.getValueb()) {
         //tileImage.resize(renderTargetWidth, renderTargetHeight);

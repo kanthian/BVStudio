@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class ImgPattern extends LXPattern {
-  String filename = "GeorgeFloyd_byRM.png";
+  String filename = "george-floyd.png";
   BufferedImage img;
 
   public ImgPattern(LX lx) {
