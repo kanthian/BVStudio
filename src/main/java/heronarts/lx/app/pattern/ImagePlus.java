@@ -123,7 +123,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
     tileImage = applet.loadImage(filesDir + imgname);
     if (!tileKnob.getValueb()) {
       if (!scanKnob.getValueb()) {
-        tileImage.resize(renderTargetWidth, renderTargetHeight);
+        //tileImage.resize(renderTargetWidth, renderTargetHeight);
         image = tileImage;
       } else {
         // Don't resize when we are scanning, we will just move a pg.width,pg.height rectangle around
