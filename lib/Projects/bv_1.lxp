@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1594776200852,
+  "timestamp": 1594780136738,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -692,7 +692,7 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": true,
+          "selected": false,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -717,14 +717,14 @@
           "modulationColor": 0
         },
         "parameters": {
-          "label": "Bot Strip 19",
+          "label": "Bot Strip 20",
           "x": 22.5,
           "y": 53.9,
           "z": 0.0,
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": false,
+          "selected": true,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -742,8 +742,7 @@
         },
         "children": {}
       }
-    ],
-    "file": "Model_07142_0426PM.lxm"
+    ]
   },
   "engine": {
     "id": 1,

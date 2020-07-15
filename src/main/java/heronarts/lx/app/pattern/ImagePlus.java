@@ -70,8 +70,8 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
   protected boolean movingVertically = false;
   protected boolean movingForwards = true;
   protected int verticalMovement = 0;
-  protected int scanViewportWidth = 100;
-  protected int scanViewportHeight = 100;
+  protected int scanViewportWidth = 69;
+  protected int scanViewportHeight = 105;
 
   public ImagePlus(LX lx) {
     super(lx);
