@@ -10,7 +10,7 @@ public class BG_IMG extends UI3dComponent {
     PImage img;
 
     public BG_IMG(PApplet pApplet) {
-        img = pApplet.loadImage("background.png");
+        img = pApplet.loadImage("plain.png");
         if (img!= null) {
             System.out.println("image loaded!");
         } else {

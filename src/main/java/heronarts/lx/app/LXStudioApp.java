@@ -68,6 +68,7 @@ public class LXStudioApp extends PApplet implements LXPlugin {
 
     // Register custom pattern and effect types
     lx.registry.addPattern(heronarts.lx.app.pattern.AppPattern.class);
+    lx.registry.addPattern(heronarts.lx.app.pattern.ImgPattern.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
   }
 
@@ -80,8 +81,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
   public void onUIReady(LXStudio lx, LXStudio.UI ui) {
     // At this point, the LX Studio application UI has been built. You may now add
     // additional views and components to the Ui heirarchy.
-    BG_IMG bgImg = new BG_IMG(this);
-    lx.ui.preview.addComponent(bgImg);
+   // BG_IMG bgImg = new BG_IMG(this);
+   // lx.ui.preview.addComponent(bgImg);
   }
 
   @Override

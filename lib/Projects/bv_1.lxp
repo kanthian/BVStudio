@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1594711363684,
+  "timestamp": 1594767160593,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -36,8 +36,8 @@
         },
         "parameters": {
           "label": "Bot 1 Grid",
-          "x": -93.5,
-          "y": -70.0,
+          "x": -38.5,
+          "y": -40.0,
           "z": 0.0,
           "yaw": 0.0,
           "pitch": 0.0,
@@ -54,10 +54,10 @@
           "opcChannel": 0,
           "ddpDataOffset": 0,
           "kinetPort": 1,
-          "numRows": 38,
-          "numColumns": 33,
-          "rowSpacing": 2.9,
-          "columnSpacing": 5.8,
+          "numRows": 43,
+          "numColumns": 35,
+          "rowSpacing": 1.9,
+          "columnSpacing": 3.8,
           "positionMode": 0,
           "wiring": 0,
           "splitPacket": false,
@@ -73,8 +73,8 @@
         },
         "parameters": {
           "label": "Bot 2 Grid",
-          "x": -90.6,
-          "y": -68.6,
+          "x": -36.6,
+          "y": -39.05,
           "z": 0.0,
           "yaw": 0.0,
           "pitch": 0.0,
@@ -91,10 +91,10 @@
           "opcChannel": 0,
           "ddpDataOffset": 0,
           "kinetPort": 1,
-          "numRows": 37,
-          "numColumns": 32,
-          "rowSpacing": 2.9,
-          "columnSpacing": 5.8,
+          "numRows": 42,
+          "numColumns": 34,
+          "rowSpacing": 1.9,
+          "columnSpacing": 3.8,
           "positionMode": 0,
           "wiring": 0,
           "splitPacket": false,
@@ -110,8 +110,8 @@
         },
         "parameters": {
           "label": "Bot Strip 1",
-          "x": -84.8,
-          "y": 39.0,
+          "x": -32.8,
+          "y": 40.95,
           "z": 0.0,
           "yaw": 0.0,
           "pitch": 0.0,
@@ -129,8 +129,8 @@
           "opcChannel": 0,
           "ddpDataOffset": 0,
           "kinetPort": 1,
-          "numPoints": 30,
-          "spacing": 5.9
+          "numPoints": 32,
+          "spacing": 3.8
         },
         "children": {}
       },
@@ -142,8 +142,72 @@
         },
         "parameters": {
           "label": "Bot Strip 2",
-          "x": -76.3,
-          "y": 40.9,
+          "x": -27.1,
+          "y": 41.9,
+          "z": 0.0,
+          "yaw": 0.0,
+          "pitch": 0.0,
+          "roll": 0.0,
+          "selected": false,
+          "enabled": false,
+          "brightness": 1.0,
+          "identify": true,
+          "mute": false,
+          "solo": false,
+          "protocol": 0,
+          "reverse": false,
+          "host": "127.0.0.1",
+          "artNetUniverse": 0,
+          "opcChannel": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numPoints": 29,
+          "spacing": 3.8
+        },
+        "children": {}
+      },
+      {
+        "id": 92,
+        "class": "heronarts.lx.structure.StripFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Bot Strip 3",
+          "x": -25.1,
+          "y": 42.9,
+          "z": 0.0,
+          "yaw": 0.0,
+          "pitch": 0.0,
+          "roll": 0.0,
+          "selected": false,
+          "enabled": false,
+          "brightness": 1.0,
+          "identify": true,
+          "mute": false,
+          "solo": false,
+          "protocol": 0,
+          "reverse": false,
+          "host": "127.0.0.1",
+          "artNetUniverse": 0,
+          "opcChannel": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numPoints": 28,
+          "spacing": 3.8
+        },
+        "children": {}
+      },
+      {
+        "id": 93,
+        "class": "heronarts.lx.structure.StripFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Bot Strip 4",
+          "x": -23.3,
+          "y": 43.9,
           "z": 0.0,
           "yaw": 0.0,
           "pitch": 0.0,
@@ -162,7 +226,39 @@
           "ddpDataOffset": 0,
           "kinetPort": 1,
           "numPoints": 26,
-          "spacing": 5.9
+          "spacing": 3.8
+        },
+        "children": {}
+      },
+      {
+        "id": 94,
+        "class": "heronarts.lx.structure.StripFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Bot Strip 5",
+          "x": -17.5,
+          "y": 44.9,
+          "z": 0.0,
+          "yaw": 0.0,
+          "pitch": 0.0,
+          "roll": 0.0,
+          "selected": false,
+          "enabled": false,
+          "brightness": 1.0,
+          "identify": true,
+          "mute": false,
+          "solo": false,
+          "protocol": 0,
+          "reverse": false,
+          "host": "127.0.0.1",
+          "artNetUniverse": 0,
+          "opcChannel": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numPoints": 24,
+          "spacing": 3.8
         },
         "children": {}
       }
@@ -385,6 +481,36 @@
                   }
                 },
                 "deviceVersion": -1
+              },
+              {
+                "id": 69,
+                "class": "heronarts.lx.app.pattern.ImgPattern",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "Img"
+                },
+                "children": {
+                  "modulation": {
+                    "id": 70,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
               }
             ]
           }
@@ -562,9 +688,9 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 412.77320588697364,
-          "theta": 0.0,
-          "phi": 0.0,
+          "radius": 198.80859194691547,
+          "theta": -0.010391161311417818,
+          "phi": 0.046760196797549725,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
@@ -572,9 +698,9 @@
         "cue": [
           {
             "active": false,
-            "radius": 412.77320588697364,
-            "theta": 0.0,
-            "phi": 0.0,
+            "radius": 198.80859194691547,
+            "theta": -0.010391161311417818,
+            "phi": 0.046760196797549725,
             "x": 0.0,
             "y": 0.0,
             "z": 0.0
