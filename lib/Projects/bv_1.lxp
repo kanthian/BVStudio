@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1594797945558,
+  "timestamp": 1595227802018,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -340,7 +340,7 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": true,
+          "selected": false,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -724,7 +724,7 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": false,
+          "selected": true,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -874,7 +874,7 @@
           "scene-5": false,
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
-          "focusedChannel": 2,
+          "focusedChannel": 1,
           "cueA": false,
           "cueB": false,
           "viewCondensed": false
@@ -908,7 +908,7 @@
               "label": "Channel-1",
               "arm": false,
               "selected": false,
-              "enabled": true,
+              "enabled": false,
               "cue": false,
               "fader": 1.0,
               "crossfadeGroup": 0,
@@ -1131,7 +1131,7 @@
             "parameters": {
               "label": "Channel-2",
               "arm": false,
-              "selected": false,
+              "selected": true,
               "enabled": true,
               "cue": false,
               "fader": 1.0,
@@ -1139,18 +1139,18 @@
               "blendMode": 4,
               "midiMonitor": false,
               "midiChannel": 16,
-              "autoCycleEnabled": false,
+              "autoCycleEnabled": true,
               "autoCycleMode": 0,
-              "autoCycleTimeSecs": 60.0,
-              "transitionEnabled": false,
-              "transitionTimeSecs": 5.0,
+              "autoCycleTimeSecs": 3.0,
+              "transitionEnabled": true,
+              "transitionTimeSecs": 3.0,
               "transitionBlendMode": 0,
-              "focusedPattern": 0
+              "focusedPattern": 2
             },
             "children": {},
             "effects": [],
             "clips": [],
-            "patternIndex": 0,
+            "patternIndex": 2,
             "patterns": [
               {
                 "id": 194,
@@ -1165,7 +1165,7 @@
                   "label": "ImagePlus",
                   "scan": false,
                   "fps": 1.0,
-                  "img": "george-floyd_crop.png",
+                  "img": "AhmaudArbery_byRM.png",
                   "tile": false,
                   "vportscale": 10.0,
                   "speed": 1.0
@@ -1173,6 +1173,150 @@
                 "children": {
                   "modulation": {
                     "id": 195,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              },
+              {
+                "id": 284,
+                "class": "heronarts.lx.app.pattern.ImagePlus",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "ImagePlus",
+                  "scan": false,
+                  "fps": 1.0,
+                  "img": "BreonnaTaylor_byRM.png",
+                  "tile": false,
+                  "vportscale": 10.0,
+                  "speed": 1.0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 285,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              },
+              {
+                "id": 288,
+                "class": "heronarts.lx.app.pattern.ImagePlus",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "ImagePlus",
+                  "scan": false,
+                  "fps": 1.0,
+                  "img": "george_floyd-hi_contrast.jpg",
+                  "tile": false,
+                  "vportscale": 10.0,
+                  "speed": 1.0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 289,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              },
+              {
+                "id": 290,
+                "class": "heronarts.lx.app.pattern.ImagePlus",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "ImagePlus",
+                  "scan": false,
+                  "fps": 1.0,
+                  "img": "breonna-bw.jpg",
+                  "tile": false,
+                  "vportscale": 10.0,
+                  "speed": 1.0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 291,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              },
+              {
+                "id": 292,
+                "class": "heronarts.lx.app.pattern.ImagePlus",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "ImagePlus",
+                  "scan": false,
+                  "fps": 1.0,
+                  "img": "ahmaud-bw.jpg",
+                  "tile": false,
+                  "vportscale": 10.0,
+                  "speed": 1.0
+                },
+                "children": {
+                  "modulation": {
+                    "id": 293,
                     "class": "heronarts.lx.modulation.LXModulationEngine",
                     "internal": {
                       "modulationColor": 0
@@ -1200,7 +1344,7 @@
             "parameters": {
               "label": "Channel-3",
               "arm": false,
-              "selected": true,
+              "selected": false,
               "enabled": true,
               "cue": false,
               "fader": 0.0,
@@ -1259,7 +1403,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.4640000000001857
+            "basis": 0.585000000001254
           }
         ],
         "modulations": [
@@ -1449,7 +1593,7 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 326.6154072969586,
+          "radius": 258.805223068824,
           "theta": -0.010391161311417818,
           "phi": 0.046760196797549725,
           "x": 0.0,
@@ -1459,7 +1603,7 @@
         "cue": [
           {
             "active": false,
-            "radius": 326.6154072969586,
+            "radius": 258.805223068824,
             "theta": -0.010391161311417818,
             "phi": 0.046760196797549725,
             "x": 0.0,
@@ -1514,7 +1658,7 @@
         ],
         "focus": 0,
         "pointCloud": {
-          "pointSize": 3.0
+          "pointSize": 5.0
         },
         "grid": {
           "visible": false,
