@@ -50,8 +50,8 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
 
   protected PImage image;
   protected PImage tileImage;
-  protected int renderTargetWidth = 30;
-  protected int renderTargetHeight = 30;
+  protected int renderTargetWidth = 138;
+  protected int renderTargetHeight = 105;
   protected String filesDir;  // Must end in a '/'
   protected boolean includeAntialias;
   protected int paddingX;
@@ -70,7 +70,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
   protected boolean movingVertically = false;
   protected boolean movingForwards = true;
   protected int verticalMovement = 0;
-  protected int scanViewportWidth = 69;
+  protected int scanViewportWidth = 138;
   protected int scanViewportHeight = 105;
 
   public ImagePlus(LX lx) {
@@ -125,7 +125,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
     System.out.println("image aspect ratio: " + (float)tileImage.width/(float)tileImage.height);
     if (!tileKnob.getValueb()) {
       if (!scanKnob.getValueb()) {
-        //tileImage.resize(renderTargetWidth, renderTargetHeight);
+        tileImage.resize(renderTargetWidth, renderTargetHeight);
         image = tileImage;
       } else {
         // Don't resize when we are scanning, we will just move a pg.width,pg.height rectangle around
