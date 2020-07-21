@@ -53,8 +53,8 @@ public class AnimatedGIF extends P3LXPattern implements UIDeviceControls<Animate
   // successive vertical strip of LEDs is vertically offset by half the pitch.  By doubling the
   // rendering target resolution, we should be able to have the offset led pixel land on an original
   // pixel in our image.
-  private int renderTargetWidth = 200;  // This should be 2x the vertical lines
-  private int renderTargetHeight = 200;        // This should be 2x the horizontal lines.
+  private int renderTargetWidth = 138;  // This should be 2x the vertical lines
+  private int renderTargetHeight = 105;        // This should be 2x the horizontal lines.
   private String filesDir;  // Must end in a '/'
 
   public AnimatedGIF(LX lx) {
