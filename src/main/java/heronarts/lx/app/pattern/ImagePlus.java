@@ -140,7 +140,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
       logger.info("tileImage.width=" + tileImage.width + " tileImage.height=" + tileImage.height);
       numTiles = renderTargetWidth / tileImage.width;
       int remainderPixelsX = renderTargetWidth - (numTiles * tileImage.width);
-      // No vertical padding right now int paddingY = imageHeight - image.height;
+      // No vertical padding right now int paddingY = renderTargetHeight - image.height;
       paddingX = remainderPixelsX / (numTiles+1);
       logger.info("Tiling image: " + imgname + " numTiles=" + numTiles + " paddingX=" + paddingX);
       pg.beginDraw();
@@ -178,7 +178,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
       renderToPointsScan();
     } else {
       for (LXPoint p : model.points) {
-        colors[p.index] = pointToImageColor(p, image);
+        colors[p.index] = pointToImageColor(lx, p, image);
       }
     }
   }
@@ -213,7 +213,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
   }
 
   public int pointToImageColorViewport(LXPoint p, PImage img, int xOffset, int yOffset) {
-    float tCoordinates[] = pointToNormalizedCoordinates(p);
+    float tCoordinates[] = pointToNormalizedCoordinates(lx, p);
     float imgXCoord = tCoordinates[0] * (scanViewportWidth * viewportScale.getValuef() - 1);
     // LXModel coordinates are world space where increasing Y is pointing up.  Image coordinates
     // have an increasing Y going down the screen so flip the orientation by subtracting the
@@ -231,8 +231,8 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
    * @param img
    * @return
    */
-  public int pointToImageColor(LXPoint p, PImage img) {
-    float tCoordinates[] = pointToNormalizedCoordinates(p);
+  static public int pointToImageColor(LX lx, LXPoint p, PImage img) {
+    float tCoordinates[] = pointToNormalizedCoordinates(lx, p);
     float imgXCoord = tCoordinates[0] * (img.width - 1);
     // LXModel coordinates are world space where increasing Y is pointing up.  Image coordinates
     // have an increasing Y going down the screen so flip the orientation by subtracting the
@@ -248,7 +248,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
    * @param p The
    * @return A float array containing the tx,ty normalized coordinates (from 0 to 1).
    */
-  public float[] pointToNormalizedCoordinates(LXPoint p) {
+  static public float[] pointToNormalizedCoordinates(LX lx, LXPoint p) {
     float[] coordinates = {0f, 0f};
     LXModel model = lx.getModel();
     coordinates[0] = (p.x - model.xMin)/(model.xRange);
@@ -361,7 +361,7 @@ public class ImagePlus extends P3LXPattern implements UIDeviceControls<ImagePlus
    * Utility base class to clean up all the patterns that have file
    * inputs.
    */
-  class FileItemBase extends UIItemList.Item {
+  static public class FileItemBase extends UIItemList.Item {
     protected final String filename;
 
     public FileItemBase(String str) {
