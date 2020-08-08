@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1596924309837,
+  "timestamp": 1596926084270,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -1382,10 +1382,10 @@
                   "oneShot": false,
                   "reset": false,
                   "advP": false,
-                  "font": 4,
+                  "font": 5,
                   "mult": false,
                   "osc": false,
-                  "fontsize": 17,
+                  "fontsize": 23,
                   "centr": false,
                   "fade": 1.0,
                   "which": 0
@@ -1479,7 +1479,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.7800000000022428
+            "basis": 0.5560000000024498
           }
         ],
         "modulations": [
@@ -1669,7 +1669,7 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 131.28397313131157,
+          "radius": 142.5829959543151,
           "theta": 0.015406583901494741,
           "phi": 0.029561704955995083,
           "x": 0.0,
@@ -1679,7 +1679,7 @@
         "cue": [
           {
             "active": false,
-            "radius": 131.28397313131157,
+            "radius": 142.5829959543151,
             "theta": 0.015406583901494741,
             "phi": 0.029561704955995083,
             "x": 0.0,

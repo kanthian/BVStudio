@@ -83,7 +83,7 @@ public class AnimatedText extends PGBase implements UIDeviceControls<AnimatedTex
   int fontSize = 10;
 
   public AnimatedText(LX lx) {
-    super(lx, 69, 63);
+    super(lx, 69*2, 63*2);
     reset.addListener(new LXParameterListener() {
       @Override
       public void onParameterChanged(LXParameter p) {
