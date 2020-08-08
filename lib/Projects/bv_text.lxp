@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1596926084270,
+  "timestamp": 1596926930414,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -1377,7 +1377,7 @@
                   "label": "AnimatedText",
                   "Fps": 60.0,
                   "str": "",
-                  "XSpd": 0.19999999552965164,
+                  "XSpd": 0.7999999821186066,
                   "clockwise": false,
                   "oneShot": false,
                   "reset": false,
@@ -1479,7 +1479,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.5560000000024498
+            "basis": 0.9880000000025789
           }
         ],
         "modulations": [
