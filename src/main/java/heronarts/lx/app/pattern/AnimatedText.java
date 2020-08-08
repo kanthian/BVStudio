@@ -46,8 +46,9 @@ public class AnimatedText extends PGBase implements UIDeviceControls<AnimatedTex
   public final BooleanParameter multiply = new BooleanParameter("mult", true);
   public final BooleanParameter osc = new BooleanParameter("osc", false);
   public final BooleanParameter centered = new BooleanParameter("centr", false);
+  public final BooleanParameter blur = new BooleanParameter("blur", false);
 
-  public final String[] fontNames = {"Courier New", "Sitka Small"};
+  public final String[] fontNames = {"Courier New", "Sitka Small", "04b 30", "Bahnschrift Bold Condensed", "Impact", "Press Start Regular"};
   public final DiscreteParameter fontKnob = new DiscreteParameter("font", 0, fontNames.length);
   public final DiscreteParameter fontSizeKnob = new DiscreteParameter("fontsize", 24, 10, 32);
 
@@ -262,6 +263,10 @@ public class AnimatedText extends PGBase implements UIDeviceControls<AnimatedTex
             */
       }
     }
+    if (blur.getValueb()) {
+      int blurRadius = 1;
+      textImage.filter(PConstants.BLUR, blurRadius);
+    }
     textImage.updatePixels();
     currentPos = clockwise.getValueb()
         ? -textImage.width + textGapPixels
@@ -405,6 +410,13 @@ public class AnimatedText extends PGBase implements UIDeviceControls<AnimatedTex
     new UIButton()
         .setParameter(osc)
         .setLabel("osc")
+        .setTextOffset(0, 12)
+        .setWidth(24)
+        .setHeight(16)
+        .addToContainer(knobsContainer);
+    new UIButton()
+        .setParameter(blur)
+        .setLabel("blur")
         .setTextOffset(0, 12)
         .setWidth(24)
         .setHeight(16)

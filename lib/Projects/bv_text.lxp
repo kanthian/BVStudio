@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1596867071514,
+  "timestamp": 1596924309837,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -79,7 +79,7 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": true,
+          "selected": false,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -724,7 +724,7 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": false,
+          "selected": true,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
@@ -1148,7 +1148,39 @@
               "focusedPattern": 5
             },
             "children": {},
-            "effects": [],
+            "effects": [
+              {
+                "id": 468,
+                "class": "heronarts.lx.effect.BlurEffect",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false
+                },
+                "parameters": {
+                  "label": "Blur",
+                  "enabled": false,
+                  "amount": 0.760000005364418
+                },
+                "children": {
+                  "modulation": {
+                    "id": 469,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              }
+            ],
             "clips": [],
             "patternIndex": 5,
             "patterns": [
@@ -1343,17 +1375,17 @@
                 },
                 "parameters": {
                   "label": "AnimatedText",
-                  "Fps": 11.400001086294651,
+                  "Fps": 60.0,
                   "str": "",
-                  "XSpd": 0.2,
+                  "XSpd": 0.19999999552965164,
                   "clockwise": false,
                   "oneShot": false,
                   "reset": false,
                   "advP": false,
-                  "font": 1,
+                  "font": 4,
                   "mult": false,
                   "osc": false,
-                  "fontsize": 25,
+                  "fontsize": 17,
                   "centr": false,
                   "fade": 1.0,
                   "which": 0
@@ -1447,7 +1479,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.6910000000016081
+            "basis": 0.7800000000022428
           }
         ],
         "modulations": [
@@ -1637,7 +1669,7 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 134.69450097905798,
+          "radius": 131.28397313131157,
           "theta": 0.015406583901494741,
           "phi": 0.029561704955995083,
           "x": 0.0,
@@ -1647,7 +1679,7 @@
         "cue": [
           {
             "active": false,
-            "radius": 134.69450097905798,
+            "radius": 131.28397313131157,
             "theta": 0.015406583901494741,
             "phi": 0.029561704955995083,
             "x": 0.0,
