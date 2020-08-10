@@ -1,6 +1,7 @@
 package heronarts.lx.app.model;
 
 import heronarts.lx.model.LXModel;
+import heronarts.lx.model.LXPoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,9 @@ import java.util.List;
 public class TestGridModel extends LXModel {
     private static List<Dataline> datalines = new ArrayList<>();
     private static List<Strip> strips = new ArrayList<>();
+
+    // HACK to handle skipped pixels on 6 x 6 test grid
+    public static List<LXPoint> skippedPoints;
 
     public TestGridModel(TestGridModelConfig config) {
         super(setup(config));

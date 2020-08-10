@@ -12,6 +12,7 @@ public class TestGridModelDatalineBuilder {
         LXTransform t = new LXTransform();
         List<Strip> strips = new ArrayList<>();
         List<LXPoint> points;
+        List<LXPoint> skippedPoints = new ArrayList<>();
 
         boolean stagger = true;
         boolean reverseRow = false;
@@ -40,7 +41,10 @@ public class TestGridModelDatalineBuilder {
 
                 points.add(new LXPoint(t));
                 if (config.skipEveryOtherPixel) {
-                    points.add(new LXPoint(t));
+                    // throw skipped pixels off to the back so they don't interfere with actual pixels in the visualizer
+                    LXPoint p = new LXPoint(0, 0, 10);
+                    points.add(p);
+                    skippedPoints.add(p);
                 }
             }
             t.pop();
@@ -55,10 +59,10 @@ public class TestGridModelDatalineBuilder {
             staggerRow = !staggerRow;
         }
 
+        TestGridModel.skippedPoints = skippedPoints;
+
         List<Dataline> datalines = new ArrayList<>();
-
         datalines.add(new Dataline("grid", config.ipAddress, config.channel, strips));
-
         return datalines;
     }
 }

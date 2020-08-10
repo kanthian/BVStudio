@@ -4,6 +4,10 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 import heronarts.lx.LX;
+import heronarts.lx.app.model.TestGridModel;
+import heronarts.lx.color.LXColor;
+import heronarts.lx.model.LXPoint;
+import heronarts.lx.output.LXBufferDatagram;
 import heronarts.lx.output.LXOutputGroup;
 import heronarts.lx.output.LXDatagramOutput;
 import heronarts.lx.output.ArtNetDatagram;
@@ -55,7 +59,16 @@ public class PixLite extends LXOutputGroup {
                     indices[i1] = pointsGrouping.getPoint(counter++).index;
                 }
                 try {
-                    ArtNetDatagram datagram = new ArtNetDatagram(indices, universe - 1);
+                    ArtNetDatagram datagram = new ArtNetDatagram(indices, universe - 1) {
+                        // HACK to handle skipped pixels on the 6 x 6 test panel
+                        @Override
+                        protected LXBufferDatagram copyPoints(int[] colors, byte[] glut, int[] indexBuffer, int offset) {
+                            for (LXPoint p : TestGridModel.skippedPoints) {
+                                colors[p.index] = LXColor.BLACK;
+                            }
+                            return super.copyPoints(colors, glut, indexBuffer, offset);
+                        }
+                    };
                     datagram.setAddress(InetAddress.getByName(ipAddress));
                     addDatagram(datagram);
                 } catch (UnknownHostException e) {
