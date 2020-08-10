@@ -19,9 +19,17 @@
 package heronarts.lx.app;
 
 import java.io.File;
+import java.util.HashMap;
 
 import heronarts.lx.LX;
 import heronarts.lx.LXPlugin;
+import heronarts.lx.app.model.Dataline;
+import heronarts.lx.app.model.TestGridModel;
+import heronarts.lx.app.model.TestGridModelConfig;
+import heronarts.lx.app.output.PixLite;
+import heronarts.lx.app.output.PointsGrouping;
+import heronarts.lx.app.ui.UIDatalines;
+import heronarts.lx.output.LXOutput;
 import heronarts.lx.studio.LXStudio;
 import processing.core.PApplet;
 
@@ -39,6 +47,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
   private static int HEIGHT = 800;
   private static boolean FULLSCREEN = false;
 
+  public final static HashMap<String, PixLite> pixlites = new HashMap<String, PixLite>();
+
   @Override
   public void settings() {
     if (FULLSCREEN) {
@@ -55,7 +65,15 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     flags.useGLPointCloud = false;
     flags.startMultiThreaded = true;
 
-    new LXStudio(this, flags);
+    TestGridModelConfig config = new TestGridModelConfig(8, 8)
+            .setRowPitch(6)
+            .setColPitch(6)
+            .setStagger(3)
+            .setIpAddress("192.168.2.20")
+            .setChannel(1);
+    TestGridModel model = new TestGridModel(config);
+
+    new LXStudio(this, flags, model);
     this.surface.setTitle(WINDOW_TITLE);
   }
 
@@ -72,7 +90,35 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(heronarts.lx.app.pattern.ImgPattern.class);
     lx.registry.addPattern(heronarts.lx.app.pattern.AnimatedText.class);
     lx.registry.addPattern(heronarts.lx.app.pattern.AnimatedGIF.class);
+    lx.registry.addPattern(heronarts.lx.app.pattern.DatalineSelector.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
+
+    for (Dataline dataline : TestGridModel.getDatalines()) {
+      String ipAddress = dataline.getIpAddress();
+
+      if (!pixlites.containsKey(ipAddress)) {
+        PixLite pixlite = new PixLite(lx, ipAddress);
+        pixlites.put(ipAddress, pixlite);
+        lx.addOutput(pixlite);
+        pixlite.enabled.setValue(true);
+      }
+
+      PixLite pixlite = pixlites.get(ipAddress);
+      PointsGrouping group = new PointsGrouping(dataline.getId(), dataline.points);
+      pixlite.addPixliteChannel(dataline.getChannel(), group);
+    }
+
+    // print used pixlite channels
+    System.out.println();
+    System.out.println("-- Setup pixlites ----------------------------");
+    pixlites.forEach((ipAddress, pixlite) -> {
+      System.out.println(ipAddress + " - " + pixlite.children.size() + " datalines");
+      for (LXOutput channel : pixlite.children) {
+        System.out.println(" -> Channel " + ((PixLite.Channel) channel).getIndex());
+      }
+      System.out.println("----------------------------------------------");
+    });
+    System.out.println();
   }
 
   public void initializeUI(LXStudio lx, LXStudio.UI ui) {
@@ -86,6 +132,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     // additional views and components to the Ui heirarchy.
     BG_IMG bgImg = new BG_IMG(this);
     lx.ui.preview.addComponent(bgImg);
+
+    new UIDatalines(lx, ui).setExpanded(true).addToContainer(ui.leftPane.global);
   }
 
   @Override
