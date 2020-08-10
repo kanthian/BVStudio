@@ -35,7 +35,7 @@ public class PixLite extends LXOutputGroup {
         public Channel(LX lx, int index, PointsGrouping pointsGrouping) throws Exception {
             super(lx);
             this.index = index;
-            this.firstUniverseOnChannel = index * 10;
+            this.firstUniverseOnChannel = index * 2 - 1;
             setupDatagrams(pointsGrouping);
         }
 
