@@ -65,12 +65,21 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     flags.useGLPointCloud = false;
     flags.startMultiThreaded = true;
 
-    TestGridModelConfig config = new TestGridModelConfig(8, 8)
-            .setRowPitch(6)
-            .setColPitch(6)
-            .setStagger(3)
+//    TestGridModelConfig config = new TestGridModelConfig(8, 8)
+//            .setRowPitch(6)
+//            .setColPitch(6)
+//            .setStagger(3)
+//            .setIpAddress("192.168.2.20")
+//            .setChannel(1);
+//    TestGridModel model = new TestGridModel(config);
+
+    TestGridModelConfig config = new TestGridModelConfig(6, 6)
+            .setRowPitch(9)
+            .setColPitch(9)
+            .setStagger(4.5f)
+            .setSkipEveryOtherPixel(true)
             .setIpAddress("192.168.2.20")
-            .setChannel(1);
+            .setChannel(2);
     TestGridModel model = new TestGridModel(config);
 
     new LXStudio(this, flags, model);

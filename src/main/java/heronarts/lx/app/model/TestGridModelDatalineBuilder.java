@@ -16,6 +16,8 @@ public class TestGridModelDatalineBuilder {
         boolean stagger = true;
         boolean reverseRow = false;
         boolean staggerRow = false;
+        // HACK for 6 x 6 test panel, whose staggered rows have 1 fewer LED
+        boolean shortenStaggeredRow = config.isSkipEveryOtherPixel();
         for (int row = 0; row < config.rows; row++) {
             points = new ArrayList<>();
 
@@ -32,7 +34,14 @@ public class TestGridModelDatalineBuilder {
                     t.translateX(config.getRowPitch());
                 }
 
+                if (shortenStaggeredRow && staggerRow && col == config.cols - 1) {
+                    break;
+                }
+
                 points.add(new LXPoint(t));
+                if (config.skipEveryOtherPixel) {
+                    points.add(new LXPoint(t));
+                }
             }
             t.pop();
 

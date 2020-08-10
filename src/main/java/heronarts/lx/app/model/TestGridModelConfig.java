@@ -12,6 +12,7 @@ public class TestGridModelConfig {
 
     String ipAddress;
     int channel;
+    boolean skipEveryOtherPixel = false;
 
     public TestGridModelConfig(int rows, int cols) {
         this.rows = rows;
@@ -60,6 +61,15 @@ public class TestGridModelConfig {
 
     public TestGridModelConfig setChannel(int channel) {
         this.channel = channel;
+        return this;
+    }
+
+    public boolean isSkipEveryOtherPixel() {
+        return skipEveryOtherPixel;
+    }
+
+    public TestGridModelConfig setSkipEveryOtherPixel(boolean skipEveryOtherPixel) {
+        this.skipEveryOtherPixel = skipEveryOtherPixel;
         return this;
     }
 }
