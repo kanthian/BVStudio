@@ -6,7 +6,7 @@ hs_err_pid*
 
 .lxpreferences
 update-libs.sh
-
+.idea/workspace.xml
 .DS_Store
 applet
 application.linux32

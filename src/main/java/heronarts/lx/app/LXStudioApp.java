@@ -70,6 +70,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(heronarts.lx.app.pattern.AppPattern.class);
     lx.registry.addPattern(heronarts.lx.app.pattern.ImagePlus.class);
     lx.registry.addPattern(heronarts.lx.app.pattern.ImgPattern.class);
+    lx.registry.addPattern(heronarts.lx.app.pattern.AnimatedText.class);
+    lx.registry.addPattern(heronarts.lx.app.pattern.AnimatedGIF.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
   }
 

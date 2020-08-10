@@ -19,6 +19,7 @@ public class BG_IMG extends UI3dComponent {
     }
 
     public void onDraw(UI ui, PGraphics pg) {
+        pg.noStroke();
         pg.pushMatrix();
         pg.beginShape();
         pg.texture(img);

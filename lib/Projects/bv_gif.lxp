@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1595227802018,
+  "timestamp": 1595291066143,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -1139,18 +1139,18 @@
               "blendMode": 4,
               "midiMonitor": false,
               "midiChannel": 16,
-              "autoCycleEnabled": true,
+              "autoCycleEnabled": false,
               "autoCycleMode": 0,
               "autoCycleTimeSecs": 3.0,
-              "transitionEnabled": true,
+              "transitionEnabled": false,
               "transitionTimeSecs": 3.0,
               "transitionBlendMode": 0,
-              "focusedPattern": 2
+              "focusedPattern": 5
             },
             "children": {},
             "effects": [],
             "clips": [],
-            "patternIndex": 2,
+            "patternIndex": 5,
             "patterns": [
               {
                 "id": 194,
@@ -1331,6 +1331,41 @@
                   }
                 },
                 "deviceVersion": -1
+              },
+              {
+                "id": 379,
+                "class": "heronarts.lx.app.pattern.AnimatedGIF",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "AnimatedGIF",
+                  "fps": 1.0000002011656757,
+                  "samt": 1.0,
+                  "scale": true,
+                  "fit": true,
+                  "file": "tree"
+                },
+                "children": {
+                  "modulation": {
+                    "id": 380,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
               }
             ]
           },
@@ -1403,7 +1438,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.585000000001254
+            "basis": 0.3480000000016168
           }
         ],
         "modulations": [
@@ -1594,8 +1629,8 @@
         "camera": {
           "active": false,
           "radius": 258.805223068824,
-          "theta": -0.010391161311417818,
-          "phi": 0.046760196797549725,
+          "theta": -0.018990386743098497,
+          "phi": 0.09835569094866514,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
@@ -1604,8 +1639,8 @@
           {
             "active": false,
             "radius": 258.805223068824,
-            "theta": -0.010391161311417818,
-            "phi": 0.046760196797549725,
+            "theta": -0.018990386743098497,
+            "phi": 0.09835569094866514,
             "x": 0.0,
             "y": 0.0,
             "z": 0.0
