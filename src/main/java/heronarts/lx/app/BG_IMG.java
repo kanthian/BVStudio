@@ -10,7 +10,8 @@ public class BG_IMG extends UI3dComponent {
     PImage img;
 
     public BG_IMG(PApplet pApplet) {
-        img = pApplet.loadImage("plain.png");
+        // 5000 x 2813
+        img = pApplet.loadImage("bvstudiobg.jpg");
         if (img!= null) {
             System.out.println("image loaded!");
         } else {
@@ -19,14 +20,23 @@ public class BG_IMG extends UI3dComponent {
     }
 
     public void onDraw(UI ui, PGraphics pg) {
+        float width = 5000f;
+        float height = 2813f;
+        width = img.width;
+        height = img.height;
+        float aspectRatio = width/height;
+        float size = 19.93f;
+        float xOffset = -1.44f;
+        float yOffset = -2.7f;
+        float z = 0.2f;
         pg.noStroke();
         pg.pushMatrix();
         pg.beginShape();
         pg.texture(img);
-        pg.vertex(-100, -100, 2, 0, img.height);  // bottom left
-        pg.vertex(100, -100, 2, img.width, img.height);  // bottom right
-        pg.vertex(100, 100, 2, img.width, 0); // top right
-        pg.vertex(-100, 100, 2, 0, 0); // top left
+        pg.vertex(-size * aspectRatio + xOffset, -size + yOffset, z, 0, img.height);  // bottom left
+        pg.vertex(size * aspectRatio + xOffset, -size + yOffset, z, img.width, img.height);  // bottom right
+        pg.vertex(size*aspectRatio + xOffset, size + yOffset, z, img.width, 0); // top right
+        pg.vertex(-size*aspectRatio + xOffset, size + yOffset, z, 0, 0); // top left
         pg.endShape();
         pg.popMatrix();
     }

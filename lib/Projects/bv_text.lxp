@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1596926930414,
+  "timestamp": 1597024124253,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -42,8 +42,8 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": false,
-          "enabled": false,
+          "selected": true,
+          "enabled": true,
           "brightness": 1.0,
           "identify": false,
           "mute": false,
@@ -80,7 +80,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "selected": false,
-          "enabled": false,
+          "enabled": true,
           "brightness": 1.0,
           "identify": false,
           "mute": false,
@@ -724,13 +724,13 @@
           "yaw": 0.0,
           "pitch": 0.0,
           "roll": 0.0,
-          "selected": true,
+          "selected": false,
           "enabled": false,
           "brightness": 1.0,
           "identify": false,
           "mute": false,
           "solo": false,
-          "protocol": 0,
+          "protocol": 1,
           "reverse": false,
           "host": "127.0.0.1",
           "artNetUniverse": 0,
@@ -1479,7 +1479,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.9880000000025789
+            "basis": 0.46100000000727204
           }
         ],
         "modulations": [
@@ -1517,7 +1517,7 @@
         },
         "parameters": {
           "label": "Output",
-          "enabled": true,
+          "enabled": false,
           "fps": 0.0,
           "gamma": 1.0,
           "brightness": 1.0
@@ -1669,9 +1669,9 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 142.5829959543151,
-          "theta": 0.015406583901494741,
-          "phi": 0.029561704955995083,
+          "radius": 134.94339485177852,
+          "theta": 0.02400583541020751,
+          "phi": 0.03816095273941755,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
@@ -1679,9 +1679,9 @@
         "cue": [
           {
             "active": false,
-            "radius": 142.5829959543151,
-            "theta": 0.015406583901494741,
-            "phi": 0.029561704955995083,
+            "radius": 134.94339485177852,
+            "theta": 0.02400583541020751,
+            "phi": 0.03816095273941755,
             "x": 0.0,
             "y": 0.0,
             "z": 0.0
