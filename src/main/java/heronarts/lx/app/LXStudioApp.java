@@ -22,6 +22,7 @@ import java.io.File;
 
 import heronarts.lx.LX;
 import heronarts.lx.LXPlugin;
+import heronarts.lx.app.model.Dimensions;
 import heronarts.lx.studio.LXStudio;
 import processing.core.PApplet;
 
@@ -65,6 +66,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     // to the LX engine or hierarchy. This is also used in headless mode, so note that
     // you cannot assume you are working with an LXStudio class or that any UI will be
     // available.
+
+    Dimensions.createFixture(lx);
 
     // Register custom pattern and effect types
     lx.registry.addPattern(heronarts.lx.app.pattern.AppPattern.class);
