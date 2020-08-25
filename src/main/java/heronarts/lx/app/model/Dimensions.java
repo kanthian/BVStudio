@@ -9,20 +9,25 @@ import java.util.*;
 
 /**
  * Various installation dimensions and dimension related utility functions.
+ * 600" across, 438" to the peak.  Peak offset is 7'9" or 93".
  *
  * All units are in feet.
  */
 public class Dimensions {
   public static final float SUBRECT_WIDTH = 600f/12f;
-  public static final float SUBRECT_HEIGHT = 438f/12f - 83f/12f;
-  public static final float FLAT_ROOF_MARGIN = 33f/12f;
-  public static final float PEAK_OFFSET = 83f/12f;
-  public static final float ROOF_SLOPE_RUN = 288.5f/12f;
+  public static final float PEAK_OFFSET = 93f/12f; // 7'9" or 7.75 ft or 93" 83f/12f;
+  public static final float SUBRECT_HEIGHT = 438f/12f - PEAK_OFFSET;
+  public static final float FLAT_ROOF_MARGIN = 25f/12f;
+  public static final float ROOF_SLOPE_RUN = 289f/12f;
   public static final float ROOF_SLOPE = 17f;  // degrees
-  public static final float SIDE_MARGIN = 0f/12f;  // start with nothing.
+  public static final float SIDE_MARGIN = 6f/12f;  // start with nothing.
+  public static final float BIG_FIRST_COLUMN_EPSILON = 3f;
+  public static final float TOP_MARGIN = (6f-BIG_FIRST_COLUMN_EPSILON)/12f;
+  public static final float BOTTOM_MARGIN = 6f/12f;
   public static final float verticalSpacing = 6f/12f;
   public static final float horizontalSpacing = 6f/12f;
   public static final float verticalStagger = 3f/12f;
+
 
 
   /**
@@ -98,9 +103,9 @@ public class Dimensions {
         yStaggerThisOne = verticalStagger;
       }
       // Set the xPos to be centered around 0 in X in 3D worldspace coordinates.
-      float xPos = -SUBRECT_WIDTH/2f + stripNum * horizontalSpacing;
+      float xPos = -SUBRECT_WIDTH/2f + stripNum * horizontalSpacing + SIDE_MARGIN;
       oneStrip.addProperty("x", -SUBRECT_WIDTH/2f + stripNum * horizontalSpacing);
-      oneStrip.addProperty("y", yOffset);
+      oneStrip.addProperty("y", yOffset + BOTTOM_MARGIN);
       oneStrip.addProperty("spacing", verticalSpacing);
       JsonObject directionObj = new JsonObject();
       // For now, all point up.  Eventually, depending on wiring, some might point down so we can
@@ -114,9 +119,9 @@ public class Dimensions {
       // For computing the height from the ground to the roof, we assume that x=0 is the left side of the building.
       // So we can't directly use our centered-around-0 worldspace X coordinate.  Shift it back over.
       float roofRelativeXPos = xPos + SUBRECT_WIDTH/2f;
-      float height = getTotalVerticalHeight(roofRelativeXPos);
+      float height = getTotalVerticalHeight(roofRelativeXPos) - (TOP_MARGIN + BOTTOM_MARGIN);
 
-      int numPointsThisStrip = (int)((height - yStaggerThisOne) / verticalSpacing);
+      int numPointsThisStrip = (int)((height - yStaggerThisOne) / verticalSpacing) + 1;
 
       Integer count = stripLengths.getOrDefault(numPointsThisStrip, 0);
       count = count + 1;

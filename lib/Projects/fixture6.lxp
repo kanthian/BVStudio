@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1598314292944,
+  "timestamp": 1598317446251,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -29,11 +29,11 @@
     },
     "fixtures": [
       {
-        "jsonFixtureType": "bvfixture2",
+        "jsonFixtureType": "bvfixture4",
         "jsonParameters": {
           "Host": "127.0.0.1"
         },
-        "id": 47,
+        "id": 84,
         "class": "heronarts.lx.structure.JsonFixture",
         "internal": {
           "modulationColor": 0
@@ -52,7 +52,7 @@
           "identify": false,
           "mute": false,
           "solo": false,
-          "fixtureType": "bvfixture2",
+          "fixtureType": "bvfixture4",
           "scale": 1.0
         },
         "children": {}

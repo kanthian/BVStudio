@@ -25,9 +25,9 @@ public class BG_IMG extends UI3dComponent {
         width = img.width;
         height = img.height;
         float aspectRatio = width/height;
-        float size = 31f;
-        float xOffset = -2.2f;
-        float yOffset = 0.0f;
+        float size = 30.5f;
+        float xOffset = -2.7f;
+        float yOffset = -0.0f;
         float z = 0.2f;
         pg.noStroke();
         pg.pushMatrix();
