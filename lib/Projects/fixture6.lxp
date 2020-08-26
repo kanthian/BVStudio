@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1598317446251,
+  "timestamp": 1598458739506,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -29,11 +29,11 @@
     },
     "fixtures": [
       {
-        "jsonFixtureType": "bvfixture4",
+        "jsonFixtureType": "bvfixture5",
         "jsonParameters": {
           "Host": "127.0.0.1"
         },
-        "id": 84,
+        "id": 103,
         "class": "heronarts.lx.structure.JsonFixture",
         "internal": {
           "modulationColor": 0
@@ -52,7 +52,7 @@
           "identify": false,
           "mute": false,
           "solo": false,
-          "fixtureType": "bvfixture4",
+          "fixtureType": "bvfixture5",
           "scale": 1.0
         },
         "children": {}
@@ -481,29 +481,29 @@
         "mode": 0,
         "animation": false,
         "animationTime": 1000.0,
-        "projection": 0,
+        "projection": 1,
         "perspective": 60.0,
         "depth": 1.0,
         "phiLock": true,
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 50.41039411254848,
-          "theta": -0.024501146748661995,
-          "phi": 0.03266820777207613,
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
+          "radius": 52.20392632032047,
+          "theta": 0.11433874815702438,
+          "phi": 0.44918783474713564,
+          "x": -0.293928446713835,
+          "y": 5.796175643801689,
+          "z": 2.778677369467914
         },
         "cue": [
           {
             "active": false,
-            "radius": 50.41039411254848,
-            "theta": -0.024501146748661995,
-            "phi": 0.03266820777207613,
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
+            "radius": 52.20392632032047,
+            "theta": 0.11433874815702438,
+            "phi": 0.44918783474713564,
+            "x": -0.293928446713835,
+            "y": 5.796175643801689,
+            "z": 2.778677369467914
           },
           {
             "active": false,
@@ -553,13 +553,13 @@
         ],
         "focus": 0,
         "pointCloud": {
-          "pointSize": 3.1799999959766865
+          "pointSize": 4.619999963790178
         },
         "grid": {
-          "visible": false,
-          "spacing": 100.0,
+          "visible": true,
+          "spacing": 1.0,
           "planes": 1,
-          "size": 10,
+          "size": 40,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0

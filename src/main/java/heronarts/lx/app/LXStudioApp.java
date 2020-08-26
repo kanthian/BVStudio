@@ -89,6 +89,8 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     // additional views and components to the Ui heirarchy.
     BG_IMG bgImg = new BG_IMG(this);
     lx.ui.preview.addComponent(bgImg);
+    Dimensions.FrameDebug frameDebug = new Dimensions.FrameDebug();
+    lx.ui.preview.addComponent(frameDebug);
   }
 
   @Override

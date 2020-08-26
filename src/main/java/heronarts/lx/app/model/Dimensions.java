@@ -3,9 +3,17 @@ package heronarts.lx.app.model;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import heronarts.lx.LX;
+import heronarts.lx.color.LXColor;
 import heronarts.lx.structure.JsonFixture;
+import heronarts.p3lx.ui.UI;
+import heronarts.p3lx.ui.UI3dComponent;
+import processing.core.PConstants;
+import processing.core.PGraphics;
+import processing.core.PVector;
 
 import java.util.*;
+
+import static processing.core.PConstants.TRIANGLE_STRIP;
 
 /**
  * Various installation dimensions and dimension related utility functions.
@@ -15,18 +23,20 @@ import java.util.*;
  */
 public class Dimensions {
   public static final float SUBRECT_WIDTH = 600f/12f;
+  public static final float PEAK_HEIGHT = 438f/12f; // 36' 6" or 438"
   public static final float PEAK_OFFSET = 93f/12f; // 7'9" or 7.75 ft or 93" 83f/12f;
-  public static final float SUBRECT_HEIGHT = 438f/12f - PEAK_OFFSET;
+  public static final float SUBRECT_HEIGHT = 438f/12f - PEAK_OFFSET; // Also 28' 9" or 345" also 438 - 93
   public static final float FLAT_ROOF_MARGIN = 25f/12f;
   public static final float ROOF_SLOPE_RUN = 289f/12f;
-  public static final float ROOF_SLOPE = 17f;  // degrees
-  public static final float SIDE_MARGIN = 6f/12f;  // start with nothing.
+  public static final float ROOF_SLOPE = 18f;  // degrees
+  public static final float SIDE_MARGIN = 6f/12f;
   public static final float BIG_FIRST_COLUMN_EPSILON = 3f;
   public static final float TOP_MARGIN = (6f-BIG_FIRST_COLUMN_EPSILON)/12f;
   public static final float BOTTOM_MARGIN = 6f/12f;
   public static final float verticalSpacing = 6f/12f;
   public static final float horizontalSpacing = 6f/12f;
   public static final float verticalStagger = 3f/12f;
+  public static final float DEFAULT_Y_OFFSET = -9.0f;
 
 
 
@@ -90,21 +100,20 @@ public class Dimensions {
 
     int numStrips = (int)((SUBRECT_WIDTH - 2f * SIDE_MARGIN) / horizontalSpacing) + 1;
 
-    float defaultYOffset = -9.0f;
     for (int stripNum = 0; stripNum < numStrips; stripNum++) {
       JsonObject oneStrip = new JsonObject();
       float yOffset;
       float yStaggerThisOne;
       if (stripNum % 2 == 0) {
-        yOffset = defaultYOffset;
+        yOffset = DEFAULT_Y_OFFSET;
         yStaggerThisOne = 0f;
       } else {
-        yOffset = defaultYOffset + verticalStagger;
+        yOffset = DEFAULT_Y_OFFSET + verticalStagger;
         yStaggerThisOne = verticalStagger;
       }
       // Set the xPos to be centered around 0 in X in 3D worldspace coordinates.
       float xPos = -SUBRECT_WIDTH/2f + stripNum * horizontalSpacing + SIDE_MARGIN;
-      oneStrip.addProperty("x", -SUBRECT_WIDTH/2f + stripNum * horizontalSpacing);
+      oneStrip.addProperty("x", xPos);
       oneStrip.addProperty("y", yOffset + BOTTOM_MARGIN);
       oneStrip.addProperty("spacing", verticalSpacing);
       JsonObject directionObj = new JsonObject();
@@ -150,4 +159,109 @@ public class Dimensions {
     fixture.save(lx, jObj);
     return fixture;
   }
+
+  static public class FrameDebug extends UI3dComponent {
+    private UICylinder bottom;
+    private UICylinder right;
+    private UICylinder left;
+    private UICylinder leftFlatRoof;
+    private UICylinder rightFlatRoof;
+    private UICylinder leftPeak;
+    private UICylinder rightPeak;
+    private static float FRAME_RADIUS = 0.05f;
+
+    public FrameDebug() {
+      bottom = new UICylinder(FRAME_RADIUS, SUBRECT_WIDTH, 4, LXColor.rgb(255,0,0));
+      left = new UICylinder(FRAME_RADIUS, SUBRECT_HEIGHT, 4, LXColor.rgb(255, 0, 0));
+      right = new UICylinder(FRAME_RADIUS, SUBRECT_HEIGHT, 4, LXColor.rgb(255, 0, 0));
+      leftFlatRoof = new UICylinder(FRAME_RADIUS, FLAT_ROOF_MARGIN, 4, LXColor.rgb(255, 0, 0));
+      rightFlatRoof = new UICylinder(FRAME_RADIUS, FLAT_ROOF_MARGIN, 4, LXColor.rgb(255, 0, 0));
+      leftPeak = new UICylinder(FRAME_RADIUS, ROOF_SLOPE_RUN, 4, LXColor.rgb(255, 0, 0));
+      rightPeak = new UICylinder(FRAME_RADIUS, ROOF_SLOPE_RUN, 4, LXColor.rgb(255, 0, 0));
+    }
+
+    public void onDraw(UI ui, PGraphics pg) {
+      pg.pushMatrix();
+      pg.translate(-SUBRECT_WIDTH/2f, DEFAULT_Y_OFFSET, 0f);
+      left.onDraw(ui, pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(+SUBRECT_WIDTH/2f, DEFAULT_Y_OFFSET, 0f);
+      right.onDraw(ui,pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(SUBRECT_WIDTH/2f, DEFAULT_Y_OFFSET, 0f);
+      pg.rotateZ((float)Math.toRadians(90f));
+      bottom.onDraw(ui, pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(-SUBRECT_WIDTH/2f + FLAT_ROOF_MARGIN, DEFAULT_Y_OFFSET + SUBRECT_HEIGHT, 0f);
+      pg.rotateZ((float)Math.toRadians(90f));
+      leftFlatRoof.onDraw(ui, pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(SUBRECT_WIDTH/2f, DEFAULT_Y_OFFSET + SUBRECT_HEIGHT, 0f);
+      pg.rotateZ((float)Math.toRadians(90f));
+      rightFlatRoof.onDraw(ui, pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(-SUBRECT_WIDTH/2f + FLAT_ROOF_MARGIN, DEFAULT_Y_OFFSET + SUBRECT_HEIGHT, 0f);
+      pg.rotateZ((float)Math.toRadians(-(90f - ROOF_SLOPE)));
+      leftPeak.onDraw(ui, pg);
+      pg.popMatrix();
+      pg.pushMatrix();
+      pg.translate(0f, DEFAULT_Y_OFFSET + SUBRECT_HEIGHT + PEAK_OFFSET, 0f);
+      pg.rotateZ((float)Math.toRadians(-(90f + ROOF_SLOPE)));
+      rightPeak.onDraw(ui, pg);
+      pg.popMatrix();
+    }
+
+  }
+
+  /**
+   * Utility class for drawing cylinders. Assumes the cylinder is oriented with the
+   * y-axis vertical. Use transforms to position accordingly.
+   */
+  public static class UICylinder extends UI3dComponent {
+
+    private final PVector[] base;
+    private final PVector[] top;
+    private final int detail;
+    public final float len;
+    private int fill;
+
+    public UICylinder(float radius, float len, int detail, int fill) {
+      this(radius, radius, 0, len, detail, fill);
+    }
+
+    public UICylinder(float baseRadius, float topRadius, float len, int detail, int fill) {
+      this(baseRadius, topRadius, 0, len, detail, fill);
+    }
+
+    public UICylinder(float baseRadius, float topRadius, float yMin, float yMax, int detail, int fill) {
+      this.base = new PVector[detail];
+      this.top = new PVector[detail];
+      this.detail = detail;
+      this.len = yMax - yMin;
+      this.fill = fill;
+      for (int i = 0; i < detail; ++i) {
+        float angle = i * PConstants.TWO_PI / detail;
+        this.base[i] = new PVector(baseRadius * (float)Math.cos(angle), yMin, baseRadius * (float)Math.sin(angle));
+        this.top[i] = new PVector(topRadius * (float)Math.cos(angle), yMax, topRadius * (float)Math.sin(angle));
+      }
+    }
+
+    public void onDraw(UI ui, PGraphics pg) {
+      pg.fill(fill);
+      pg.noStroke();
+      pg.beginShape(TRIANGLE_STRIP);
+      for (int i = 0; i <= this.detail; ++i) {
+        int ii = i % this.detail;
+        pg.vertex(this.base[ii].x, this.base[ii].y, this.base[ii].z);
+        pg.vertex(this.top[ii].x, this.top[ii].y, this.top[ii].z);
+      }
+      pg.endShape(PConstants.CLOSE);
+    }
+  }
+
 }
