@@ -26,21 +26,21 @@ Consult the [LX Studio API reference &rarr;](http://lx.studio/api/)
 
 #### Install jar dependencies from lib/ directory into local Maven repository ####
 
-mvn install:install-file -Dfile="lib\\lx-0.2.0-jar-with-dependencies.jar" -DgroupId=heronarts -DartifactId=lx -Dversion="0.2.0" -Dpackaging=jar
+	mvn install:install-file -Dfile="lib\\lx-0.2.0-jar-with-dependencies.jar" -DgroupId=heronarts -DartifactId=lx -Dversion="0.2.0" -Dpackaging=jar
 
-mvn install:install-file -Dfile="lib\\p3lx-0.2.0.jar" -DgroupId=heronarts -DartifactId=p3lx -Dversion="0.2.0" -Dpackaging=jar
+	mvn install:install-file -Dfile="lib\\p3lx-0.2.0.jar" -DgroupId=heronarts -DartifactId=p3lx -Dversion="0.2.0" -Dpackaging=jar
 
-mvn install:install-file -Dfile="lib\\lxstudio-0.2.0.jar" -DgroupId=heronarts -DartifactId=lxstudio -Dversion="0.2.0" -Dpackaging=jar
+	mvn install:install-file -Dfile="lib\\lxstudio-0.2.0.jar" -DgroupId=heronarts -DartifactId=lxstudio -Dversion="0.2.0" -Dpackaging=jar
 
-mvn install:install-file -Dfile="lib\\processing-3.5.4\\core.jar" -DgroupId="org.processing" -DartifactId=core -Dversion="3.5.4" -Dpackaging=jar
+	mvn install:install-file -Dfile="lib\\processing-3.5.4\\core.jar" -DgroupId="org.processing" -DartifactId=core -Dversion="3.5.4" -Dpackaging=jar
 
 #### Build and package JAR ####
 
-mvn package
+	mvn package
 
 #### Run JAR from command-line ####
 
-java -jar target\\lxstudio-ide-0.2.0-jar-with-dependencies.jar
+	java -jar target\\lxstudio-ide-0.2.0-jar-with-dependencies.jar
 
 ### Contact and Collaboration ###
 
