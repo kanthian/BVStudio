@@ -1,0 +1,1 @@
+{"label":"BVFixture","modelKeys":["bvfixture"],"parameters":{"Host":{"type":"string","default":"127.0.0.1"}},"strips":[{"x":-16,"y":-9.0,"spacing":0.5,"direction":{"x":0,"y":1,"z":0},"numPoints":40}]}

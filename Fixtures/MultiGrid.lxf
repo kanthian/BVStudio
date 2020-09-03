@@ -1,0 +1,121 @@
+{
+  "label": "MultiGrid",
+
+  "modelKeys": ["multigrid"],
+  
+  "parameters": {
+    "Prefix": { type: "string", default: "127.0.0" },
+    "Width" : { type: "int", default: 40 },
+    "Width2" : { type: "int", default: 39},
+    "W1PlusW2" : { type: "int", default: 79},
+    "WPlus9" : {type: "int", default: 49},
+    "WPlus8" : {type: "int", default: 48},
+    "WPlus7" : {type: "int", default: 47},
+    "WPlus6" : {type: "int", default: 46},
+    "WPlus5" : {type: "int", default: 45},
+    "WPlus4" : {type: "int", default: 44},
+    "WPlus3" : {type: "int", default: 43},
+    "WPlus2" : {type: "int", default: 42},
+    "WPlus1" : {type: "int", default: 41}
+  },
+  
+  "strips": [
+    { x: -16, y: -9.0, spacing: 0.5, direction: {x:"0", y:"1" , z:"0"}, numPoints: "${Width}" },
+    { x: -15.5, y: 10.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width2}" },
+    { x: -15, y: -9.0, spacing: 0.5, direction: {x:"0", y:"1", z:"0"}, numPoints: "${Width}" },
+    { x: -14.5, y: 10.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width2}" },
+    { x: -14, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${Width}" },
+    { x: -13.5, y: 10.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width}" },
+    { x: -13, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus1}" },
+    { x: -12.5, y: 10.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width}" },
+    { x: -12, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus1}" },
+
+    { x: -11.5, y: 11.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus1}" },
+
+
+    { x: -11, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus2}" },
+    { x: -10.5, y: 11.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus2}" },
+
+    { x: -10, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus3}" },
+    { x: -9.5, y: 11.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus2}" },
+
+    { x: -9, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus3}" },
+    { x: -8.5, y: 12.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus3}" },
+    { x: -8, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus4}" },
+    { x: -7.5, y: 12.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus4}" },
+    { x: -7, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus4}" },
+    { x: -6.5, y: 12.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus4}" },
+    { x: -6, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus5}" },
+    { x: -5.5, y: 13.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus5}" },
+
+    { x: -5, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus5}" },
+    { x: -4.5, y: 13.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus5}" },
+    { x: -4, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus6}" },
+    { x: -3.5, y: 13.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus6}" },
+    { x: -3, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus7}" },
+    { x: -2.5, y: 14.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus7}" },
+    { x: -2, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus8}" },
+    { x: -1.5, y: 14.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus7}" },   
+    { x: -1, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus8}" },
+    { x: -0.5, y: 14.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus8}" },
+
+    { x: 0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus9}" },
+
+    { x: 0.5, y: 14.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus8}" },
+    { x: 1.0, y: -9.0, spacing: 0.5, direction: {x:"0", y:"1", z:"0"}, numPoints: "${WPlus8}" },
+    { x: 1.5, y: 14.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus7}" },
+    { x: 2.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus8}" },
+    { x: 2.5, y: 14.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus7}" },
+    { x: 3.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus7}" },
+    { x: 3.5, y: 13.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus6}" },
+    { x: 4.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus6}" },
+    { x: 4.5, y: 13.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus5}" },
+    { x: 5.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus5}" },
+    { x: 5.5, y: 13.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus5}" },
+    { x: 6.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus5}" },
+    { x: 6.5, y: 12.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus4}" },
+    { x: 7.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus4}" },
+    { x: 7.5, y: 12.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus4}" },
+    { x: 8.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus4}" },
+    { x: 8.5, y: 12.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus3}" },
+    { x: 9.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus3}" },
+    { x: 9.5, y: 11.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus2}" },
+    { x: 10.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus3}" },
+    { x: 10.5, y: 11.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus2}" },
+    { x: 11.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus2}" },
+    { x: 11.5, y: 11.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${WPlus1}" },
+    { x: 12.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus1}" },
+    { x: 12.5, y: 10.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width}" },
+    { x: 13.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${WPlus1}" },
+    { x: 13.5, y: 10.75, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width}" },
+    { x: 14.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${Width}" },
+    { x: 14.5, y: 10.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width2}" },
+    { x: 15.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${Width}" },
+    { x: 15.5, y: 10.25, spacing: 0.5, direction: {x:"0", y:"-1", z:"0"}, numPoints: "${Width2}" },
+    { x: 16.0, y: -9.0, spacing: 0.5, direction: {x:"0" , y:"1" , z:"0"}, numPoints: "${Width}" },
+
+
+
+  ],
+  
+  
+  "outputs": [ 
+    { protocol: "artnet", universe: "1", host: "${Prefix}.1" , byteOrder: "rgb", start: "0*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "2", host: "${Prefix}.2" , byteOrder: "rgb", start: "1*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "3", host: "${Prefix}.3" , byteOrder: "rgb", start: "2*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "4", host: "${Prefix}.4" , byteOrder: "rgb", start: "3*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "5", host: "${Prefix}.5" , byteOrder: "rgb", start: "4*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "6", host: "${Prefix}.6" , byteOrder: "rgb", start: "5*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "7", host: "${Prefix}.7" , byteOrder: "rgb", start: "6*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "8", host: "${Prefix}.8" , byteOrder: "rgb", start: "7*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "9", host: "${Prefix}.9" , byteOrder: "rgb", start: "8*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "10", host: "${Prefix}.10" , byteOrder: "rgb", start: "9*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "11", host: "${Prefix}.11" , byteOrder: "rgb", start: "10*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "12", host: "${Prefix}.12" , byteOrder: "rgb", start: "11*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "13", host: "${Prefix}.13" , byteOrder: "rgb", start: "12*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "14", host: "${Prefix}.14" , byteOrder: "rgb", start: "13*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "15", host: "${Prefix}.15" , byteOrder: "rgb", start: "14*${W1PlusW2}", num: "${Width}+${Width2}" },
+    { protocol: "artnet", universe: "16", host: "${Prefix}.16" , byteOrder: "rgb", start: "15*${W1PlusW2}", num: "${Width}+${Width2}" },    
+  ]
+    
+}

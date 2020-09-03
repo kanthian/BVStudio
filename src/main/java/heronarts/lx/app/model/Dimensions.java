@@ -1,5 +1,6 @@
 package heronarts.lx.app.model;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import heronarts.lx.LX;
@@ -11,6 +12,10 @@ import processing.core.PConstants;
 import processing.core.PGraphics;
 import processing.core.PVector;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 import static processing.core.PConstants.TRIANGLE_STRIP;
@@ -78,10 +83,18 @@ public class Dimensions {
     return SUBRECT_HEIGHT + height;
   }
 
+  /**
+   * Creates a JSONFixture based on various parameters.  This will overwrite the file Fixtures/bvgenerated.lxf each
+   * time we start up.  Currently a restart is required for each parameter change because they require code changes.
+   * TODO(tracy): Should this be migrated over to a custom Fixture?  I would like to re-use the existing JSONFixture
+   * and outputs support if possible.
+   * @param lx
+   * @return
+   */
   static public JsonFixture createFixture(LX lx) {
     Map<Integer, Integer> stripLengths = new HashMap<Integer, Integer>();
 
-    JsonFixture fixture = new JsonFixture(lx);
+    JsonFixture fixture = new JsonFixture(lx, "bvgenerated");
 
     JsonObject jObj = new JsonObject();
 
@@ -154,9 +167,16 @@ public class Dimensions {
 
     jObj.add("strips", strips);
 
-    System.out.println(jObj.toString());
-    fixture.load(lx, jObj);
-    fixture.save(lx, jObj);
+    // Can't seem to get it to save to bvgenerated.lxf via fixture.save() so we will directly write the json obj.
+    File fixtureFile = lx.getMediaFile(LX.Media.FIXTURES, "bvgenerated" + ".lxf", false);
+    try {
+      PrintWriter out = new PrintWriter(fixtureFile.getAbsolutePath());
+      out.println(jObj.toString());
+      out.flush();
+      out.close();
+    } catch (IOException ioex) {
+      System.err.println("Error writing generated fixture: " + ioex.getMessage());
+    }
     return fixture;
   }
 

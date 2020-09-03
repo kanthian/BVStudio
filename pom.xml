@@ -42,22 +42,22 @@
 		<dependency>
 			<groupId>org.processing</groupId>
 			<artifactId>core</artifactId>
-			<version>3.3.7</version>
-			<scope>provided</scope>
+			<version>3.5.4</version>
+			<!--<scope>provided</scope>-->
 		</dependency>
 
 		<dependency>
 			<groupId>org.jogamp.jogl</groupId>
 			<artifactId>jogl-all-main</artifactId>
 			<version>2.3.2</version>
-			<scope>provided</scope>
+			<!--<scope>provided</scope>-->
 		</dependency>
 
 		<dependency>
 			<groupId>org.jogamp.gluegen</groupId>
 			<artifactId>gluegen-rt-main</artifactId>
 			<version>2.3.2</version>
-			<scope>provided</scope>
+			<!--<scope>provided</scope>-->
 		</dependency>
 	</dependencies>
 
@@ -84,6 +84,11 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<archive>
+                        <manifest>
+                            <mainClass>heronarts.lx.app.LXStudioApp</mainClass>
+                        </manifest>
+                    </archive>
 				</configuration>
 
 				<executions>

@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "timestamp": 1599160215623,
+  "timestamp": 1599166829283,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -29,17 +29,17 @@
     },
     "fixtures": [
       {
-        "jsonFixtureType": "bvfixture5",
+        "jsonFixtureType": "bvgenerated",
         "jsonParameters": {
           "Host": "127.0.0.1"
         },
-        "id": 103,
+        "id": 144,
         "class": "heronarts.lx.structure.JsonFixture",
         "internal": {
           "modulationColor": 0
         },
         "parameters": {
-          "label": "BVFixture 1",
+          "label": "BVFixture 2",
           "x": 0.0,
           "y": 0.0,
           "z": 0.0,
@@ -52,7 +52,7 @@
           "identify": false,
           "mute": false,
           "solo": false,
-          "fixtureType": "bvfixture5",
+          "fixtureType": "bvgenerated",
           "scale": 1.0
         },
         "children": {}
@@ -532,7 +532,7 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 83.63246234237415,
+          "radius": 74.1672924142332,
           "theta": 0.045544734224677086,
           "phi": -0.169958152808249,
           "x": -1.502892121206969,
@@ -542,7 +542,7 @@
         "cue": [
           {
             "active": false,
-            "radius": 83.63246234237415,
+            "radius": 74.1672924142332,
             "theta": 0.045544734224677086,
             "phi": -0.169958152808249,
             "x": -1.502892121206969,
